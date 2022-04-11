@@ -57,7 +57,7 @@ if uploaded_file is not None:
   
   
   fig1, ax = plt.subplots()
-  ax.bar(time_df.index,time_df['Sales Price'], color='skyblue', edgecolor='black', linewidth=0.25)
+  ax.bar(time_df.index,time_df['Sales Price'], color='cadetblue', edgecolor='black', linewidth=0.25)
   ax.plot(time_df.index,time_df['Sales Price'], color='black', linewidth=0.5)
   ax.set_axisbelow(True)
   ax.yaxis.grid(True, color='grey', linewidth=0.2)

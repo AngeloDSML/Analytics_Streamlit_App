@@ -1,6 +1,4 @@
-
 #Importing Libraries
-
 import streamlit as st
 import os
 import pandas as pd
@@ -29,29 +27,23 @@ if uploaded_file is not None:
   st.markdown('#### **Data uploaded**')
  
   st.write(df.head())
- 
- 
+  
   st.markdown('''---
- 
- 
+  
  
   #### **Stats**''')
  
   st.write(df.describe())
  
- 
- 
-###     VISUALIZATIONS     ###
+  
    
-  st.markdown('''---
- 
+  st.markdown('''--- 
  
  
   #### **Visualizations**
    
   ''')
- 
-  
+   
  
   #Price Trends
   time_df = df[['Sales Date','Sales Price']]
@@ -63,7 +55,8 @@ if uploaded_file is not None:
   time_df = time_df.set_index('Month/Year')
   time_df = time_df[-13:-1]
   
-  fig9, ax = plt.subplots()
+  
+  fig1, ax = plt.subplots()
   ax.bar(time_df.index,time_df['Sales Price'], color='skyblue', edgecolor='black', linewidth=0.25)
   ax.plot(time_df.index,time_df['Sales Price'], color='black', linewidth=0.5)
   ax.set_axisbelow(True)
@@ -73,7 +66,7 @@ if uploaded_file is not None:
   plt.ylabel('Sales Price',fontsize=8)
   plt.xticks(fontsize=5)
   plt.yticks(fontsize=6)
-  st.pyplot(fig9)
+  st.pyplot(fig1)
 
   percentage_trend_12 = round((((time_df['Sales Price'][-1] - time_df['Sales Price'][0]) / time_df['Sales Price'][0]) * 100),1)
   percentage_trend_3 = round((((time_df['Sales Price'][-1] - time_df['Sales Price'][-3]) / time_df['Sales Price'][-3]) * 100),1)
@@ -87,14 +80,14 @@ if uploaded_file is not None:
 
 
   #Sales Price Histogram
-  fig1, ax = plt.subplots()
+  fig2, ax = plt.subplots()
   ax.hist(df['Sales Price'], bins=8, color='skyblue',edgecolor='black', linewidth=0.6)
   plt.title('Histogram - Sales Price',fontsize=9)
   plt.xlabel('Sales Price',fontsize=8)
   plt.ylabel('Frequency (# of Properties)',fontsize=8)
   plt.xticks(fontsize=7)
   plt.yticks(fontsize=7)
-  st.pyplot(fig1)
+  st.pyplot(fig2)
  
   st.markdown('''---
 
@@ -102,25 +95,10 @@ if uploaded_file is not None:
 
 
   #GLA Histogram
-  fig2, ax = plt.subplots()
+  fig3, ax = plt.subplots()
   ax.hist(df['Gross Living Area Sqft'], bins=8, color='skyblue',edgecolor='black', linewidth=0.6)
   plt.title('Histogram - GLA (Gross Living Area)',fontsize=9)
   plt.xlabel('GLA (Gross Living Area)',fontsize=8)
-  plt.ylabel('Frequency (# of Properties)',fontsize=8)
-  plt.xticks(fontsize=7)
-  plt.yticks(fontsize=7)
-  st.pyplot(fig2)
-
-  st.markdown('''---
-
-  ''')
-
-
-  #Site Histogram
-  fig3, ax = plt.subplots()
-  ax.hist(df['Site Area Sqft'], bins=8, color='skyblue',edgecolor='black', linewidth=0.6)
-  plt.title('Histogram - Site',fontsize=9)
-  plt.xlabel('Site',fontsize=8)
   plt.ylabel('Frequency (# of Properties)',fontsize=8)
   plt.xticks(fontsize=7)
   plt.yticks(fontsize=7)
@@ -131,15 +109,12 @@ if uploaded_file is not None:
   ''')
 
 
-  #Bedrooms Histogram   
-  bins = range(1,9)
-
+  #Site Histogram
   fig4, ax = plt.subplots()
-  ax.hist(df['Bedrooms'], bins=bins, color='skyblue',edgecolor='black', linewidth=0.6)
-  plt.title('Histogram - Bedrooms',fontsize=9)
-  plt.xlabel('Bedrooms',fontsize=8)
+  ax.hist(df['Site Area Sqft'], bins=8, color='skyblue',edgecolor='black', linewidth=0.6)
+  plt.title('Histogram - Site',fontsize=9)
+  plt.xlabel('Site',fontsize=8)
   plt.ylabel('Frequency (# of Properties)',fontsize=8)
-  ax.xaxis.set_ticks(bins)
   plt.xticks(fontsize=7)
   plt.yticks(fontsize=7)
   st.pyplot(fig4)
@@ -147,13 +122,14 @@ if uploaded_file is not None:
   st.markdown('''---
 
   ''')
-  
 
-  #Bathrooms Histogram   
+
+  #Bedrooms Histogram   
+  bins = range(1,9)
   fig5, ax = plt.subplots()
-  ax.hist(df['Bathrooms'], bins=bins, color='skyblue',edgecolor='black', linewidth=0.6)
-  plt.title('Histogram - Bathrooms',fontsize=9)
-  plt.xlabel('Bathrooms',fontsize=8)
+  ax.hist(df['Bedrooms'], bins=bins, color='skyblue',edgecolor='black', linewidth=0.6)
+  plt.title('Histogram - Bedrooms',fontsize=9)
+  plt.xlabel('Bedrooms',fontsize=8)
   plt.ylabel('Frequency (# of Properties)',fontsize=8)
   ax.xaxis.set_ticks(bins)
   plt.xticks(fontsize=7)
@@ -163,7 +139,22 @@ if uploaded_file is not None:
   st.markdown('''---
 
   ''')
+  
 
+  #Bathrooms Histogram   
+  fig6, ax = plt.subplots()
+  ax.hist(df['Bathrooms'], bins=bins, color='skyblue',edgecolor='black', linewidth=0.6)
+  plt.title('Histogram - Bathrooms',fontsize=9)
+  plt.xlabel('Bathrooms',fontsize=8)
+  plt.ylabel('Frequency (# of Properties)',fontsize=8)
+  ax.xaxis.set_ticks(bins)
+  plt.xticks(fontsize=7)
+  plt.yticks(fontsize=7)
+  st.pyplot(fig6)
+
+  st.markdown('''---
+
+  ''')
 
 
   #Correlation Matrix

@@ -81,7 +81,7 @@ if uploaded_file is not None:
 
   #Sales Price Histogram
   fig2, ax = plt.subplots()
-  ax.hist(df['Sales Price'], bins=8, color='skyblue',edgecolor='black', linewidth=0.6)
+  ax.hist(df['Sales Price'], bins=8, color='steelblue',edgecolor='black', linewidth=0.6)
   plt.title('Histogram - Sales Price',fontsize=9)
   plt.xlabel('Sales Price',fontsize=8)
   plt.ylabel('Frequency (# of Properties)',fontsize=8)
@@ -96,7 +96,7 @@ if uploaded_file is not None:
 
   #GLA Histogram
   fig3, ax = plt.subplots()
-  ax.hist(df['Gross Living Area Sqft'], bins=8, color='skyblue',edgecolor='black', linewidth=0.6)
+  ax.hist(df['Gross Living Area Sqft'], bins=8, color='steelblue',edgecolor='black', linewidth=0.6)
   plt.title('Histogram - GLA (Gross Living Area)',fontsize=9)
   plt.xlabel('GLA (Gross Living Area)',fontsize=8)
   plt.ylabel('Frequency (# of Properties)',fontsize=8)
@@ -111,7 +111,7 @@ if uploaded_file is not None:
 
   #Site Histogram
   fig4, ax = plt.subplots()
-  ax.hist(df['Site Area Sqft'], bins=8, color='skyblue',edgecolor='black', linewidth=0.6)
+  ax.hist(df['Site Area Sqft'], bins=8, color='steelblue',edgecolor='black', linewidth=0.6)
   plt.title('Histogram - Site',fontsize=9)
   plt.xlabel('Site',fontsize=8)
   plt.ylabel('Frequency (# of Properties)',fontsize=8)
@@ -127,7 +127,7 @@ if uploaded_file is not None:
   #Bedrooms Histogram   
   bins = range(1,9)
   fig5, ax = plt.subplots()
-  ax.hist(df['Bedrooms'], bins=bins, color='skyblue',edgecolor='black', linewidth=0.6)
+  ax.hist(df['Bedrooms'], bins=bins, color='steelblue',edgecolor='black', linewidth=0.6)
   plt.title('Histogram - Bedrooms',fontsize=9)
   plt.xlabel('Bedrooms',fontsize=8)
   plt.ylabel('Frequency (# of Properties)',fontsize=8)
@@ -143,7 +143,7 @@ if uploaded_file is not None:
 
   #Bathrooms Histogram   
   fig6, ax = plt.subplots()
-  ax.hist(df['Bathrooms'], bins=bins, color='skyblue',edgecolor='black', linewidth=0.6)
+  ax.hist(df['Bathrooms'], bins=bins, color='steelblue',edgecolor='black', linewidth=0.6)
   plt.title('Histogram - Bathrooms',fontsize=9)
   plt.xlabel('Bathrooms',fontsize=8)
   plt.ylabel('Frequency (# of Properties)',fontsize=8)

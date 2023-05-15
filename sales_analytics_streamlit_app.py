@@ -10,6 +10,12 @@ import seaborn as sns
 
 #Titles
 st.write("## **Home Sales Data Analytics**")
+image_1 = Image.open('Image_1.jpg')
+st.image(image_1)
+
+#Description of the tool
+st.write('''This tool can be use to analyze residential real estate sales during the development of appraisals, BPOs, and CMAs. 
+            It provides stats, histograms, correlation heatmap, and the suggested adjustment for gross living area.''')
 
 st.markdown('---')
 

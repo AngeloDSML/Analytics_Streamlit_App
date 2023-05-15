@@ -16,7 +16,7 @@ st.image(image_1)
 
 #Description of the tool
 st.write('''This tool can be used to analyze home sales data during the development of appraisals, BPOs, or CMAs. 
-            It provides time series analysis, stats, histograms, correlation heatmap, and suggested adjustment for gross living area.''')
+            It provides time series analysis, statistics, histograms, correlation heatmap, and suggested adjustment for gross living area.''')
 
 st.markdown('---')
 

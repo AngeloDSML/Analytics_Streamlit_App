@@ -15,7 +15,7 @@ image_1 = Image.open('Image_1.jpg')
 st.image(image_1)
 
 #Description of the tool
-st.write('''This tool can be used to analyze residential real estate sales during the development of appraisals, BPOs, or CMAs. 
+st.write('''This tool can be used to analyze home sales data during the development of appraisals, BPOs, or CMAs. 
             It provides time series analysis, histograms, correlation heatmap, and suggested adjustment for gross living area.''')
 
 st.markdown('---')

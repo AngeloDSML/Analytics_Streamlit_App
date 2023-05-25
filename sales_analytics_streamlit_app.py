@@ -206,10 +206,6 @@ if uploaded_file is not None:
   st.write(f'##### GLA Adjustment (Based on Linear Regression)= $ {round(gla_fit[0],2)} / sf')
   st.write(f'###### Slope = {round(gla_fit[0],2)} , Intercept = {round(gla_fit[1],2)}')
     
-  st.markdown('''---
-
-
-  ##### 😁 🍻
-  
+  st.markdown('''---  
    
   ''')
